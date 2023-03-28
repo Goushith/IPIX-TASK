@@ -1,0 +1,110 @@
+    <!-- <div style="background-image: url(https://admin-edubex.ipixsolutions.net//storage//cms//banner//BK5Ve64jtABAzUoYWEgpTEL9fBHmGRZzESjDP5qN.png);" class="main-img"></div> -->
+    <div  class=" banner_section layout_padding">
+        <div id="my_slider" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+                <div style="  height: 70vh; background-image: url(https://www.zotefoams.com/wp-content/uploads/2015/08/Building-and-construction-banner.png);" class="carousel-item active" >
+                    <div class="container">
+                        <div class="banner_taital_main">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <h1 class="banner_taital">{{data.title}}</h1>
+                                    <p class="banner_text" [innerHTML]="data.description">
+                                    </p>
+                                    <!-- <div class="btn_main">
+                                        <div class="about_bt active"><a href="#">About Us</a></div>
+                                        <div class="quote_bt"><a href="#">Get A Quote</a></div>
+                                    </div> -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+
+    <div class="contact">
+
+       
+        <div class="container contact-container">
+            <h1>{{data.name}}</h1>
+            <h3 [innerHTML]="data.description"></h3>
+            <aside class="contact-aside">
+                <div class="aside-image">
+                    <img [src]="data.cover_image" alt="">
+                </div>
+                <h2>{{data.name}}</h2>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eaque earum,]
+                     sit in quos vel laudantium recusandae perspiciatis totam labore nostrum?</p>
+                     <ul class="contact-details">
+                        <li>
+                            <i class="fa fa-address-book"></i>
+                            <h5>9874563210</h5>
+                        </li>
+                        <li>
+                            <i class="fa fa-envelope"></i>
+                            <h5>Farstay@gmail.com</h5>
+                        </li>
+                        <li>
+                            <i class="fa fa-map-marker" aria-hidden="true"></i>
+                            <h5>Kerala,India</h5>
+                        </li>
+                     
+                     </ul>
+                     <ul>
+
+                        <ul class="contact-socials">
+                            <li><a href="https://facebook.com"><i class="fa-brands fa-facebook-f"></i></a></li>
+                            <li><a href="https://instagram.com"><i class="fa-brands fa-instagram"></i></a></li>
+                            <li><a href="https://twitter.com"><i class="fa-brands fa-twitter"></i></a></li>
+                            <li><a href="https://linkedin"><i class="fa-brands fa-linkedin-in"></i></a></li>   
+                        </ul>
+                     </ul>
+
+            </aside>
+
+            <form  class="contact-form" [formGroup]="contactForm">
+                <div class="form-name">
+                    <input formControlName="first_name" type="text" name="First name" placeholder="First Name" required>
+                    <div class="usericon" *ngIf="this.contactForm.get('first_name')?.errors && this.contactForm.get('first_name')?.touched" >
+                        <i style="color: red; " class="uil uil-multiply icon"></i></div>
+                    
+        
+                    <input formControlName="last_name" type="text" name="Last name" placeholder="Last Name" required>
+                    <div class="usericon" *ngIf="this.contactForm.get('last_name')?.errors && this.contactForm.get('last_name')?.touched" >
+                        <i style="color: red; " class="uil uil-multiply icon"></i></div>
+                </div>
+                 <div class="form-name">
+                    <input formControlName="email" type="email" name="Email Address" placeholder=" Email" required>
+                    <div class="usericon" *ngIf="this.contactForm.get('email')?.errors && this.contactForm.get('email')?.touched" >
+                        <i style="color: red; " class="uil uil-multiply icon"></i></div>
+                    <input formControlName="phone" type="number" name="" placeholder="Phone number" required>
+                    <div class="usericon" *ngIf="this.contactForm.get('phone')?.errors && this.contactForm.get('phone')?.touched" >
+                        <i style="color: red; " class="uil uil-multiply icon"></i></div>
+                 </div>
+                    <textarea formControlName="message" name="Message" cols="3"  rows="4" placeholder="Message" required></textarea><br>
+                    <div class="usericon" *ngIf="this.contactForm.get('message')?.errors && this.contactForm.get('message')?.touched" >
+                        <i style="color: red; " class="uil uil-multiply icon"></i></div>
+                     <button type="Submit" class="btn btn-primary" (click)="submit()"> Send Message</button>
+                
+
+                
+                
+            </form>
+        </div>
+    </div>
+
+
+<br><br><br><br>
+
+    <div class="card-container">
+        <div class="card" *ngFor="let n of partner">
+            <img [src]="n.cover_image" class="card-img" alt="" />
+            <div class="card-body">
+              <h2 class="name">{{n.name}}</h2>
+            </div>
+          </div>
+    </div>
